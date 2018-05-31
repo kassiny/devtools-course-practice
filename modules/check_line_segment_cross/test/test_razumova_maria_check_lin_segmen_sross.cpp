@@ -88,3 +88,37 @@ TEST(Razumova_Maria_LineCross, Can_compare_not_equal_lines)
      //Act & Assert
      ASSERT_NO_THROW(line = line);
  }
+
+ TEST(Razumova_Maria_LineCross, Can_calculate_vector_product)
+ {
+     //Arrange
+     LineSegment line1(1,2,3,4);
+     LineSegment line2(4,4,5,2);
+     double prod;
+
+     //Act
+     prod = (3-1)*(2-4)-(5-4)*(4-2);
+
+     //Assert
+     EXPECT_EQ(prod, line1.vectorProduct(line2));
+ }
+
+TEST(Razumova_Maria_LineCross, check_cross_line_segments_crossed)
+{
+    //Arrange
+    LineSegment line1(1, 1, 4, 1);
+    LineSegment line2(2,-3, 2, 8);
+
+    //Act & Assert
+    EXPECT_TRUE(line1.isCross((line2)));
+}
+
+TEST(Razumova_Maria_LineCross, check_cross_line_segments_not_crossed)
+{
+    //Arrange
+    LineSegment line1(1, 1, 4, 1);
+    LineSegment line2(2,-3, 2, 0);
+
+    //Act & Assert
+    EXPECT_FALSE(line1.isCross(line2));
+}

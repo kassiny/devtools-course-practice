@@ -56,23 +56,6 @@ int LineSegment::sign(double  _x1, double _y1)
 
 bool LineSegment::isCross (LineSegment& line)
 {
-    /*
-bool Line::ifcross(Line &line)
-{
-    Coord point1,point2;
-    point1 = line.c1;
-    point2 = line.c2;
-    if(zn(point1)*zn(point2)<=0 && line.zn(c1)*line.zn(c2)<=0)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-
-*/
-
     if (sign(line.x1, line.y1)* sign(line.x2, line.y2) <= 0
             && line.sign(x1, y1)* line.sign(x2,y2)<=0)
     {

@@ -12,12 +12,11 @@ public:
     LineSegment& operator=(const LineSegment&);
     bool operator==(const LineSegment& line) const;
     bool isCross (LineSegment&);
- //   bool isCross(double x1, double y1, double x2, double y2) const;
-    double scalarProduct(const LineSegment& line);
     double vectorProduct(const LineSegment& line);
     ~LineSegment();
     
 private:
+    double scalarProduct(const LineSegment& line);
     int sign(double _x1, double _y1);
     double x1, y1, x2, y2;
 

@@ -9,7 +9,7 @@
 #include "include/two_lines.h"
 
 int main(int argc, const char** argv) {
-    SearchTreeOptions app;
+    TwoLinesOptions app;
     std::string output = app(argc, argv);
     printf("%s\n", output.c_str());
     return 0;

@@ -22,7 +22,7 @@ void TwoLinesOptions::help(const char * appname, const char * message) {
             "Where all arguments are double-precision numbers";
 }
 
-bool TwoLinesOptions::ValidateNumberOfArguments(int argc,
+bool TwoLinesOptions::validateNumberOfArguments(int argc,
     const char ** argv) {
     if (argc == 1) {
         help(argv[0]);
@@ -34,8 +34,41 @@ bool TwoLinesOptions::ValidateNumberOfArguments(int argc,
     return true;
 }
 
-std::string TwoLinesOptions::operator ()(int argc, const char** argv){
+double parseDouble(const char* arg) {
+    char* end;
+    double value = strtod(arg, &end);
 
+    if (end[0]) {
+        throw std::string("Wrong number format!");
+    }
+
+    return value;
+}
+
+std::string TwoLinesOptions::operator ()(int argc, const char** argv){
+    Arguments args;
+
+    if (!validateNumberOfArguments(argc, argv)) {
+        return message_;
+    }
+    try {
+        args.x11 = parseDouble(argv[1]);
+        args.y11 = parseDouble(argv[2]);
+        args.x12 = parseDouble(argv[3]);
+        args.y12 = parseDouble(argv[4]);
+        args.x21 = parseDouble(argv[5]);
+        args.y21 = parseDouble(argv[6]);
+        args.x22 = parseDouble(argv[7]);
+        args.x22 = parseDouble(argv[8]);
+
+    }
+    catch(std::string& str) {
+        return str;
+    }
+
+    LineSegment line1(Point(args.x11, args.y11), Point(args.x12, args.y12));
+
+    return message_;
 }
 
 

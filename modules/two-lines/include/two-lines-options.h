@@ -15,10 +15,14 @@ class TwoLinesOptions {
     bool validateNumberOfArguments(int argc, const char** argv);
     std::string message_;
     typedef struct {
-        double x1;
-        double y1;
-        double x2;
-        double y2;
+        double x11;
+        double y11;
+        double x12;
+        double y12;
+        double x21;
+        double y21;
+        double x22;
+        double y22;
     } Arguments;
 };
 

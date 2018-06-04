@@ -17,7 +17,7 @@ void TwoLinesOptions::help(const char * appname, const char * message) {
             "This is a two-lines application.\n\n" +
             "Please provide arguments in the following format:\n\n" +
             "  $ " + appname + "<x11> <y11> <x12> <y12>" +
-            "<x21> + <y211> + <x22> + <y22" +
+            "<x21> + <y211> + <x22> + <y22>" +
             "<output_file_name\n\n" +
             "Where all arguments are double-precision numbers";
 }
@@ -27,7 +27,7 @@ bool TwoLinesOptions::validateNumberOfArguments(int argc,
     if (argc == 1) {
         help(argv[0]);
         return false;
-    } else if (argc != 9) {
+    } else if (argc != 10) {
         help(argv[0], "ERROR: Should be 8 arguments.\n\n");
         return false;
     }
@@ -45,8 +45,14 @@ double parseDouble(const char* arg) {
     return value;
 }
 
+int parseInt(const char* arg) {
+    int value = std::stoi(std::string(arg));
+    return value;
+}
+
 std::string TwoLinesOptions::operator ()(int argc, const char** argv){
     Arguments args;
+    std::ostringstream stream;
 
     if (!validateNumberOfArguments(argc, argv)) {
         return message_;
@@ -67,7 +73,15 @@ std::string TwoLinesOptions::operator ()(int argc, const char** argv){
     }
 
     LineSegment line1(Point(args.x11, args.y11), Point(args.x12, args.y12));
+    LineSegment line2(Point(args.x21, args.y21), Point(args.x22, args.y22));
 
+    if (line1.intersect(line2)) {
+        stream << "lines are intersect";
+    } else {
+        stream << "lines are not intersect";
+    }
+
+    message_ = stream.str();
     return message_;
 }
 

@@ -1,7 +1,7 @@
 // Copyright 2017 Razumova Maria
 
-#ifndef MODULES_TWO_LINES_INCLUE_TWO_LINES_OPTIONS_H_
-#define MODULES_TWO_LINES_INCLUE_TWO_LINES_OPTIONS_H_
+#ifndef MODULES_TWO_LINES_INCLUDE_TWO_LINES_OPTIONS_H_
+#define MODULES_TWO_LINES_INCLUDE_TWO_LINES_OPTIONS_H_
 
 #include <string>
 
@@ -23,7 +23,8 @@ class TwoLinesOptions {
         double y21;
         double x22;
         double y22;
+        int action;
     } Arguments;
 };
 
-#endif  // MODULES_TWO_LINES_INCLUE_TWO_LINES_OPTIONS_H_
+#endif  // MODULES_TWO_LINES_INCLUDE_TWO_LINES_OPTIONS_H_

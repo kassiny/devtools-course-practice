@@ -57,7 +57,7 @@ TEST_F(TwoLinesOptionsTest, Is_Checking_Number_Of_Arguments) {
 }
 
 TEST_F(TwoLinesOptionsTest, Can_Detect_Wrong_Number_Format) {
-    vector<string> args = {"f", "0.0", "1", "1", "0", "1", "1", "0", "app.exe"};
+    vector<string> args = {"f", "0.0", "1", "1", "0", "1", "1", "0"};
 
     Act(args);
 
@@ -65,7 +65,7 @@ TEST_F(TwoLinesOptionsTest, Can_Detect_Wrong_Number_Format) {
 }
 
 TEST_F(TwoLinesOptionsTest, Can_Detect_Intersect) {
-    vector<string> args = {"0.0", "0.0", "1", "1", "0", "1", "1", "0", "app.exe"};
+    vector<string> args = {"0.0", "0.0", "1", "1", "0", "1", "1", "0"};
 
     Act(args);
 
@@ -73,7 +73,7 @@ TEST_F(TwoLinesOptionsTest, Can_Detect_Intersect) {
 }
 
 TEST_F(TwoLinesOptionsTest, Can_Detect_not_Intersect) {
-    vector<string> args = {"0.0", "0.0", "0", "1", "0.1", "0", "0.1", "1", "app.exe"};
+    vector<string> args = {"0.0", "0.0", "0", "1", "0.1", "0", "0.1", "1"};
 
     Act(args);
 

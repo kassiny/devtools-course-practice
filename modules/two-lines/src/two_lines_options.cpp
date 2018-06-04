@@ -18,7 +18,6 @@ void TwoLinesOptions::help(const char * appname, const char * message) {
             "Please provide arguments in the following format:\n\n" +
             "  $ " + appname + "<x11> <y11> <x12> <y12>" +
             "<x21> + <y211> + <x22> + <y22>" +
-            "<output_file_name\n\n" +
             "Where all arguments are double-precision numbers";
 }
 
@@ -27,7 +26,7 @@ bool TwoLinesOptions::validateNumberOfArguments(int argc,
     if (argc == 1) {
         help(argv[0]);
         return false;
-    } else if (argc != 10) {
+    } else if (argc != 9) {
         help(argv[0], "ERROR: Should be 8 arguments.\n\n");
         return false;
     }

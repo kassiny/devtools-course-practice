@@ -49,7 +49,7 @@ int parseInt(const char* arg) {
     return value;
 }
 
-std::string TwoLinesOptions::operator ()(int argc, const char** argv){
+std::string TwoLinesOptions::operator ()(int argc, const char** argv) {
     Arguments args;
     std::ostringstream stream;
 
@@ -83,5 +83,3 @@ std::string TwoLinesOptions::operator ()(int argc, const char** argv){
     message_ = stream.str();
     return message_;
 }
-
-

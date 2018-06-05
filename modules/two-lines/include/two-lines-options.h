@@ -23,7 +23,6 @@ class TwoLinesOptions {
         double y21;
         double x22;
         double y22;
-        int action;
     } Arguments;
 };
 

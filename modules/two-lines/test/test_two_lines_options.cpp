@@ -40,6 +40,7 @@ class TwoLinesOptionsTest : public ::testing::Test {
     TwoLinesOptions app_;
     string output_;
 };
+
 TEST_F(TwoLinesOptionsTest, Do_Print_Help) {
     vector<string> args = {""};
 

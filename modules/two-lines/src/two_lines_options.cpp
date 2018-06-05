@@ -70,11 +70,15 @@ std::string TwoLinesOptions::operator ()(int argc, const char** argv) {
     catch(std::string& str) {
         return str;
     }
+    Point p11(args.x11, args.y11);
+    Point p12(args.x12, args.y12);
+    LineSegment line1(p11, p12);
+    Point p21(args.x21, args.y21);
+    Point p22(args.x22, args.y22);
+    //LineSegment line2(Point(args.x21, args.y21), Point(args.x22, args.y22));
+    LineSegment line2(p21, p22);
 
-    LineSegment line1(Point(args.x11, args.y11), Point(args.x12, args.y12));
-    LineSegment line2(Point(args.x21, args.y21), Point(args.x22, args.y22));
-
-    if (line1.intersect (line2)) {
+    if (line1.intersect(line2)) {
         stream  << "lines are intersect";
     } else {
         stream  << "lines are not intersect" ;

@@ -84,9 +84,9 @@ std::string TwoLinesOptions::operator ()(int argc, const char** argv) {
     LineSegment line2(p21, p22);
 
     if (line2.intersect(line1)) {
-        stream  << "lines are intersect" << endl;
+        stream  << "lines are intersect" << std::endl;
     } else {
-        stream  << "lines are not intersect" << endl;
+        stream  << "lines are not intersect" << std::endl;
     }
 
     message_ = stream.str();

@@ -65,23 +65,22 @@ std::string TwoLinesOptions::operator ()(int argc, const char** argv) {
         args.y21 = parseDouble(argv[6]);
         args.x22 = parseDouble(argv[7]);
         args.x22 = parseDouble(argv[8]);
-
     }
     catch(std::string& str) {
         return str;
     }
-    //Point p11(args.x11, args.y11);
+    // Point p11(args.x11, args.y11);
     Point p11;
     p11.x = args.x11;
     p11.y = args.y11;
-    //Point p12(args.x12, args.y12);
+    // Point p12(args.x12, args.y12);
     Point p12;
     p12.x = args.x12;
     p12.y = args.y12;
     LineSegment line1(p11, p12);
     Point p21(args.x21, args.y21);
     Point p22(args.x22, args.y22);
-    //LineSegment line2(Point(args.x21, args.y21), Point(args.x22, args.y22));
+    // LineSegment line2(Point(args.x21, args.y21), Point(args.x22, args.y22));
     LineSegment line2(p21, p22);
 
     if (line2.intersect(line1)) {

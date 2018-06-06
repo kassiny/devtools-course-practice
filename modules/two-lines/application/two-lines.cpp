@@ -12,7 +12,7 @@
 int main(int argc, const char** argv) {
     TwoLinesOptions app;
     std::string output = app(argc, argv);
-    std::cout <<output.c_str();
+    std::cout << output << std::endl;
     // printf("%s\n", output.c_str());
     return 0;
 }

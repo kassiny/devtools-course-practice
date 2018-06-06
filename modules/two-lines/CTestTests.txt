@@ -45,7 +45,7 @@ set_tests_properties (${prefix}_can_Detect_intersect PROPERTIES
 
 add_test(
     NAME ${prefix}_can_Detect_not_intersect
-    COMMAND ${APPLICATION} 0 0 1 1 0 1 1 2
+    COMMAND ${APPLICATION} 1 0 4 3 4 0 7 3
 )
 set_tests_properties (${prefix}_can_Detect_not_intersect PROPERTIES
     PASS_REGULAR_EXPRESSION "lines are not intersect"

@@ -66,7 +66,7 @@ TEST_F(TwoLinesOptionsTest, Can_Detect_Wrong_Number_Format) {
 }
 
 TEST_F(TwoLinesOptionsTest, Can_Detect_Intersect) {
-    vector<string> args = {"0.0", "0.0", "1.0", "1.0", "0.0", "1.0", "1.0", "0.0"};
+    vector<string> args = {"0", "0", "1", "1", "1", "0", "0", "1"};
 
     Act(args);
 

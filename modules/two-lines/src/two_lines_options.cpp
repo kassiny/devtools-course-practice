@@ -84,7 +84,7 @@ std::string TwoLinesOptions::operator ()(int argc, const char** argv) {
     //LineSegment line2(Point(args.x21, args.y21), Point(args.x22, args.y22));
     LineSegment line2(p21, p22);
 
-    if (line2.getPoint1().x == 1) {
+    if (line2.intersect(line1)) {
         stream  << "lines are intersect";
     } else {
         stream  << "lines are not intersect" ;

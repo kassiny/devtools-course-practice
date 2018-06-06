@@ -86,7 +86,7 @@ std::string TwoLinesOptions::operator ()(int argc, const char** argv) {
     if (line2.intersect(line1)) {
         stream  << "lines are intersect";
     } else {
-        stream  << "lines are not intersect" ;
+        stream  << "lines are not intersect";
     }
 
     message_ = stream.str();

@@ -44,11 +44,6 @@ double parseDouble(const char* arg) {
     return value;
 }
 
-int parseInt(const char* arg) {
-    int value = std::stoi(std::string(arg));
-    return value;
-}
-
 std::string TwoLinesOptions::operator ()(int argc, const char** argv) {
     Arguments args;
     // std::ostringstream stream;

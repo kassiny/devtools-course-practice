@@ -64,7 +64,7 @@ std::string TwoLinesOptions::operator ()(int argc, const char** argv) {
         args.x21 = parseDouble(argv[5]);
         args.y21 = parseDouble(argv[6]);
         args.x22 = parseDouble(argv[7]);
-        args.x22 = parseDouble(argv[8]);
+        args.y22 = parseDouble(argv[8]);
     }
     catch(std::string& str) {
         return str;

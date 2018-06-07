@@ -51,7 +51,7 @@ int parseInt(const char* arg) {
 
 std::string TwoLinesOptions::operator ()(int argc, const char** argv) {
     Arguments args;
-    std::ostringstream stream;
+    // std::ostringstream stream;
 
     if (!validateNumberOfArguments(argc, argv)) {
         return message_;
@@ -84,11 +84,10 @@ std::string TwoLinesOptions::operator ()(int argc, const char** argv) {
     LineSegment line2(p21, p22);
 
     if (line2.intersect(line1)) {
-        stream  << "lines are intersect" << std::endl;
+        return "lines are intersect";
     } else {
-        stream  << "lines are not intersect" << std::endl;
+        return "lines are not intersect";
     }
 
-    message_ = stream.str();
     return message_;
 }
